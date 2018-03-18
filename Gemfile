@@ -11,11 +11,11 @@ gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 
 gem 'devise'
-gem 'dotenv-rails'
 
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
+  gem 'dotenv-rails'
 end
 
 group :development do
