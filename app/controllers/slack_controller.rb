@@ -5,8 +5,8 @@ class SlackController < ApplicationController
     if callback_params.present?
       uri = URI('https://slack.com/api/oauth.access')
       uri.query = {
-        client_id: SLACK_CLIENT_ID,
-        client_secret: CLIENT_SECRET
+        client_id: ENV['SLACK_CLIENT_ID'],
+        client_secret: ENV['CLIENT_SECRET']
       }.merge(callback_params)
       json = Net::HTTP.get(uri)
 

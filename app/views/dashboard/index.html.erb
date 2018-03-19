@@ -2,4 +2,6 @@
 <p>Find me in app/views/dashboard/index.html.erb</p>
 
 
-<%= link_to 'Slack Authorize', @certification_url if @certification_url.present? %>
+<% if @certification_url %>
+<%= link_to 'Slack Authorize', @certification_url.to_s %>
+<% end %>
