@@ -41,6 +41,8 @@ GEM
     arel (7.1.4)
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bugsnag (6.6.4)
+      concurrent-ruby (~> 1.0)
     builder (3.2.3)
     byebug (10.0.0)
     coffee-rails (4.1.1)
@@ -177,6 +179,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bugsnag
   byebug
   coffee-rails (~> 4.1.0)
   devise
