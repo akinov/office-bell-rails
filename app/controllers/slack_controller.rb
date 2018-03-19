@@ -8,13 +8,13 @@ class SlackController < ApplicationController
         client_id: ENV['SLACK_CLIENT_ID'],
         client_secret: ENV['CLIENT_SECRET']
       }.merge(callback_params))
-      pp uri
+
       json = Net::HTTP.get(uri)
       response = JSON.parse(json)
 
       if response['ok']
         current_user.update(slack_access_token: response['access_token'])
-        redirect_to dashboard_index_path, notice: 'Slack連携が完了しました'
+        return redirect_to dashboard_index_path, notice: 'Slack連携が完了しました'
       end
     end
 
