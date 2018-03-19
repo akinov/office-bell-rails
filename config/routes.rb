@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'slack/authorize_callback'
+
   get 'dashboard/index'
 
   devise_for :users
