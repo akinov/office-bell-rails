@@ -11,6 +11,7 @@ class SlackController < ApplicationController
 
       json = Net::HTTP.get(uri)
       response = JSON.parse(json)
+      Rails.logger.info response
 
       if response['ok']
         current_user.update(slack_access_token: response['access_token'])
