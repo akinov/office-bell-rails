@@ -11,7 +11,7 @@ class DashboardController < ApplicationController
     @certification_url = URI(ENV['SLACK_CERTIFICATION_BAES_URL'])
     @certification_url.query = URI.encode_www_form({
       client_id: ENV['SLACK_CLIENT_ID'],
-      scope: 'chat:write:bot'
+      scope: 'incoming-webhook',
     })
   end
 end
