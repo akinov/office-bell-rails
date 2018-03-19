@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'devise'
 
+gem 'slack-notifier'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
