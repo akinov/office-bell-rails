@@ -14,7 +14,12 @@ class SlackController < ApplicationController
       Rails.logger.info response
 
       if response['ok']
-        current_user.update(slack_access_token: response['access_token'])
+        current_user.update(
+          slack_access_token: response['access_token'],
+          slack_team_name: response['team_name'],
+          slack_channel_name: response['incoming_webhook']['channel'],
+          slack_webhook_url: response['incoming_webhook']['url'],
+        )
         return redirect_to dashboard_index_path, notice: 'Slack連携が完了しました'
       end
     end
