@@ -7,7 +7,7 @@ class SlackController < ApplicationController
       uri.query = URI.encode_www_form({
         client_id: ENV['SLACK_CLIENT_ID'],
         client_secret: ENV['CLIENT_SECRET']
-      }).merge(callback_params)
+      }.merge(callback_params))
       json = Net::HTTP.get(uri)
 
       if json['ok']
