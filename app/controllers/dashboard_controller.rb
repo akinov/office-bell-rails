@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_certification_url if current_user.slack_access_token.blank?
 
   def index

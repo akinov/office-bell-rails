@@ -1,4 +1,6 @@
 class SlackController < ApplicationController
+  before_action :authenticate_user!
+
   def authorize_callback
     if callback_params.present?
       uri = URI('https://slack.com/api/oauth.access')
