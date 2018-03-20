@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
+    namespace :call do
+      get '/', action: :index
+    end
     resource :sign_in, only: [:create], controller: :sessions
   end
 
