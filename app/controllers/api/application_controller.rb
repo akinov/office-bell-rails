@@ -9,6 +9,9 @@ class Api::ApplicationController < ActionController::API
   # User Authentication
   # Authenticates the user with OAuth2 Resource Owner Password Credentials
   def authenticate_user_from_token!
+    # ブラウザでログイン済の場合はスルー
+    return if user_signed_in?
+
     authentication_token = request.headers['Authorization']
 
     if authentication_token

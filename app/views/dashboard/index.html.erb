@@ -3,5 +3,8 @@
 
 
 <% if @certification_url %>
-<%= link_to 'Slack Authorize', @certification_url.to_s %>
+  <%= link_to 'Slack Authorize', @certification_url.to_s %>
+<% else %>
+  Slack連携済<br>
+  <%= link_to 'Pingテスト', api_call_path, remote: true %>
 <% end %>
