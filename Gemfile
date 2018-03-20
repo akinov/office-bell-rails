@@ -9,9 +9,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
-
+gem 'active_model_serializers'
 gem 'devise'
-
 gem 'slack-notifier'
 
 group :development, :test do
