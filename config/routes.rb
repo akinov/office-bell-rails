@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :api, defaults: { format: :json } do
+    resource :sign_in, only: [:create], controller: :sessions
+  end
+
   get 'slack/authorize_callback'
 
   get 'dashboard/index'
